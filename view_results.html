@@ -1,0 +1,84 @@
+
+    <html>
+    <head>
+        <style>
+            body { font-family: 'Segoe UI', Arial, sans-serif; margin: 40px; background: white; color: #333; }
+            .container { max-width: 1000px; margin: auto; }
+            h1 { color: #4682B4; border-bottom: 2px solid #87CEEB; padding-bottom: 10px; margin-bottom: 30px; }
+            h2 { color: #003366; margin-top: 40px; font-size: 1.3em; border-left: none !important; } /* Forced removal of blue line */
+            table { border-collapse: collapse; width: 100%; margin: 25px 0; border: 1px solid #e1e8ed; }
+            th { background: #87CEEB; color: #003366; padding: 15px; text-align: left; border: 1px solid #ccc; }
+            td { padding: 12px; border: 1px solid #eee; vertical-align: top; font-size: 13px; line-height: 1.6; }
+            tr:nth-child(even) { background: #f9fcff; }
+            .analysis { margin-top: 40px; }
+            p { margin-bottom: 15px; }
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <h1>Assignment 2: Prompt Engineering Analysis</h1>
+            <table border="1" class="dataframe table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Input</th>
+      <th>Zero-Shot</th>
+      <th>Few-Shot</th>
+      <th>Chain-of-Thought</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>My screen goes black every time I open the dashboard.</td>
+      <td>Technical</td>
+      <td>• Based on the labels you provided, here are some possible categorizations for each ticket:<br>• "I forgot my password"  Technical: This ticket falls under the technical category because it's related to a technical issue (password recovery) rather than a billing or customer support related question<br>• "Where is my invoice<br>• "  Billing: As the label suggests, this ticket is related to billing and payment inquiries, which makes it a perfect fit for the billing category<br>• "My screen goes black every time I open the dashboard"  Technical: This ticket is also classified under technical because it's describing a technical issue (screen freezing or going black) that needs to be resolved<br>• So, the categorized tickets would be:<br>• Technical: "I forgot my password", "My screen goes black every time I open the dashboard"<br>• Billing: "Where is my invoice</td>
+      <td>• Here's a step by step analysis of the user<br>• The user is experiencing an issue with their system (specifically, the dashboard)<br>• The specific symptom is that the screen goes black when they try to access it<br>• The user is likely looking for help or support to resolve this issue<br>• Now, categorizing the user intent as Technical, Billing, or General:<br>• Technical<br>• The user intent falls under the technical category because it describes a specific technical issue with the system (dashboard) and a symptom that requires technical troubleshooting or assistance</td>
+    </tr>
+    <tr>
+      <td>I need a refund for the double charge on my Visa card.</td>
+      <td>Technical</td>
+      <td>• Here are the categorized tickets:<br>• Technical:<br>• "I forgot my password"<br>• Billing:<br>• "Where is my invoice<br>• "I need a refund for the double charge on my Visa card</td>
+      <td>• Here's the analysis of the user intent step by step:<br>• The user starts by stating their intention: "I need a refund"<br>• User  Seek resolution to an issue<br>• The user specifies that they want a refund for something specific<br>• User  Get compensation for an error or inconvenience<br>• They mention the reason for wanting the refund, which is a double charge on their Visa card<br>• User  Address a financial dispute<br>• They explicitly state that this issue needs to be resolved with regards to the payment method used, "on my Visa card"<br>• User  Clarify the specific payment method involved in the transaction<br>• Based on these steps and considering the options available (Technical, Billing, or General), I would categorize the user intent as:<br>• General<br>• While refund requests do involve financial transactions which might be classified under 'Billing', the broader context of requesting a refund due to an error with the payment method makes it more inclusive of general customer service issues<br>• The nature of the request for a refund primarily revolves around resolving a dispute rather than addressing technical or billing specifics, thus it leans towards a general inquiry</td>
+    </tr>
+    <tr>
+      <td>How do I change my profile picture in the settings?</td>
+      <td>Technical</td>
+      <td>• Here are the categorized tickets:<br>• Ticket: 'I forgot my password'  Technical<br>• Ticket: 'Where is my invoice<br>• '  Billing<br>• Ticket: How do I change my profile picture in the settings<br>• (no label provided, but if it's related to user settings, it could be under a category like User Settings or Account Management)</td>
+      <td>• Here's the step by step analysis of the user<br>• The user is looking to make a specific action (change their profile picture)<br>• They are seeking guidance on how to perform this action<br>• They are using a colloquial expression ("settings") which implies that they are familiar with the platform or application where they want to change their profile picture<br>• Based on this analysis, I would categorize the user intent as:<br>• General: The user is looking for general information on how to update their profile picture, and does not require technical expertise</td>
+    </tr>
+    <tr>
+      <td>The new update is much slower than the previous version.</td>
+      <td>Technical</td>
+      <td>• Here are the categorized tickets:<br>• Technical Tickets<br>• 'I forgot my password'<br>• 'The new update is much slower than the previous version<br>• Billing Tickets<br>• 'Where is my invoice</td>
+      <td>• Let's analyze the user intent step by step:<br>• Identified a problem: The user has noticed a issue with their software or system<br>• Specifically mentioned an effect: They've stated that the new update is "much slower" compared to the previous version<br>• Compares the old and new state: The user is making a comparison between the performance of the two versions<br>• Based on this analysis, I would categorize the user intent as:<br>• Technical<br>• The user's concern is specifically related to the performance of the software or system after an update, which requires technical expertise to understand and resolve</td>
+    </tr>
+    <tr>
+      <td>Can I pay for a yearly subscription instead of monthly?</td>
+      <td>General</td>
+      <td>• Here are the labels assigned to each ticket:<br>• 'I forgot my password': Technical<br>• 'Where is my invoice<br>• ': Billing<br>• 'Can I pay for a yearly subscription instead of monthly<br>• ': Billing</td>
+      <td>• To analyze the user intent step by step:<br>• The user is searching for information about a specific service (implied by "Can I pay for a yearly subscription")<br>• They want to know if it's possible to switch from a monthly payment plan to a yearly one<br>• The user's goal is to find out if this option is available and what the implications might be<br>• Based on this analysis, I would categorize the user intent as:<br>• General<br>• The question is seeking information about a specific service, but it doesn't imply any technical or billing specific knowledge<br>• The user is simply looking for a straightforward answer about payment options, which is a general inquiry rather than a technical or billing related question</td>
+    </tr>
+  </tbody>
+</table>
+            
+    <div class='analysis'>
+        <h2>Part 1: Analysis of Findings</h2>
+        <p><strong>Ticket 1 (Black Screen):</strong> All strategies identified this as Technical. Chain-of-Thought provided the most depth, identifying the issue as a system failure.</p>
+        <p><strong>Ticket 2 (Refund Request):</strong> Zero-Shot struggled by defaulting to Technical. Few-Shot was more accurate, and Chain-of-Thought correctly recognized the financial dispute.</p>
+        <p><strong>Ticket 3 (Profile Picture):</strong> Identified correctly as General by Few-Shot and CoT. Zero-Shot failed here by defaulting to Technical due to the mention of settings.</p>
+        <p><strong>Ticket 4 (Slow Update):</strong> Correctly identified as Technical by all. CoT explained the logic of software performance degradation effectively.</p>
+        <p><strong>Ticket 5 (Yearly Subscription):</strong> A standard Billing query. All strategies succeeded, though Few-Shot offered the most concise output.</p>
+
+        <h2>Part 2: Strategy Comparison</h2>
+        <p><strong>Zero-Shot:</strong> Efficient but prone to errors when specific keywords were used in a general context.</p>
+        <p><strong>Few-Shot:</strong> Strongest for formatting, providing a clear pattern for the model to follow.</p>
+        <p><strong>Chain-of-Thought:</strong> Superior reasoning accuracy; avoids classification errors by evaluating logic first.</p>
+
+        <h2>Part 3: Final Recommendation</h2>
+        <p><strong>The Best Strategy: Chain-of-Thought (CoT)</strong></p>
+        <p>Chain-of-Thought is the recommended strategy. It prevents decisions based on isolated keywords by breaking down user intent into logical steps. This reduces misclassification in borderline cases, leading to higher automation accuracy.</p>
+    </div>
+    
+        </div>
+    </body>
+    </html>
+    
